@@ -1,7 +1,6 @@
 package homework2;
 
 import java.io.Serializable;
-import java.text.DecimalFormat;
 
 /**
  * @author Administrator

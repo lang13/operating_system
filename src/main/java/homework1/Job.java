@@ -1,7 +1,5 @@
 package homework1;
 
-import java.sql.Time;
-
 /**
  * @author Administrator
  */
