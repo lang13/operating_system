@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * @author Administrator
  */
-public class Job  implements Serializable, Cloneable {
+public class Job implements Serializable, Cloneable {
     private String Name;
     private int arrivalTime;
     private int serviceTime;

@@ -1,14 +1,17 @@
-import java.util.Scanner;
+import experiment1.Job;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TestUtil {
     public static void main(String[] args) {
-        System.out.println("请输入: ");
-        Scanner input = new Scanner(System.in);
-        String msg = input.nextLine();
-        String name = msg.substring(0,msg.indexOf(" "));
-        msg = msg.substring(msg.indexOf(" ") + 1, msg.length());
-        String arriveTime = msg.substring(0,msg.length());
-        System.out.println(name);
-        System.out.println(arriveTime);
+        List<Job> list = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            Job job = new Job(String.valueOf(i),i,i,i);
+            list.add(job);
+        }
+        Job job = list.get(0);
+        job.setName("新的名字");
+        System.out.println(list);
     }
 }

@@ -1,19 +1,21 @@
 package experiment1;
 
+import java.io.Serializable;
+
 /**
  * @author Administrator
  */
-public class Job {
+public class Job implements Serializable, Cloneable{
     private String name;
-    private int weight;
+    private double weight;
     private int arriveTime;
     private int needTime;
     private int runningTime;
-    private int condition;
     private int finishTime;
+    private int waiteTime;
     private int turnaroundTime;
     private double weightedTurnaroundTime;
-    private boolean isFinish;
+    private boolean isFinish = false;
 
     public Job() {
     }
@@ -33,11 +35,11 @@ public class Job {
         this.name = name;
     }
 
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 
@@ -65,12 +67,12 @@ public class Job {
         this.runningTime = runningTime;
     }
 
-    public int getCondition() {
-        return condition;
+    public int getWaiteTime() {
+        return waiteTime;
     }
 
-    public void setCondition(int condition) {
-        this.condition = condition;
+    public void setWaiteTime(int waiteTime) {
+        this.waiteTime = waiteTime;
     }
 
     public int getFinishTime() {
@@ -112,6 +114,11 @@ public class Job {
     }
 
     @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    @Override
     public String toString() {
         return "Job{" +
                 "name='" + name + '\'' +
@@ -119,7 +126,6 @@ public class Job {
                 ", arriveTime=" + arriveTime +
                 ", needTime=" + needTime +
                 ", runningTime=" + runningTime +
-                ", condition=" + condition +
                 ", finishTime=" + finishTime +
                 ", turnaroundTime=" + turnaroundTime +
                 ", weightedTurnaroundTime=" + weightedTurnaroundTime +
