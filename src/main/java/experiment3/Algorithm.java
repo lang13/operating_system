@@ -56,7 +56,7 @@ public class Algorithm {
             //id
             job.setId(String.valueOf(i));
             //大小
-            job.setSize(random.nextInt(100));
+            job.setSize(random.nextInt(70));
             //状态
             job.setState("N");
             //添加jobs
@@ -91,7 +91,7 @@ public class Algorithm {
         for (int i = 0; i < jobs.size(); i++) {
             //取出需要分配空间的job
             Job job = jobs.get(i);
-            if ("已完成".equals(job.getSize())){
+            if ("已完成".equals(job.getState())){
                 continue;
             }
             for (int j = 0; j < blocks.size(); j++) {
